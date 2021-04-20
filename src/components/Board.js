@@ -40,12 +40,27 @@ class Board extends React.Component {
     componentDidMount() {
         console.log("component mounted");
 
-        // if (localStorage.getItem(squares) && localStorage.getItem(xIsNext)){
-        //     this.setState({
-        //         squares: localStorage.getItem(squares),
-        //         xIsNext: localStorage.getItem(xIsNext),
-        //     });
-        // }
+        // Mounting previous state from local storage
+
+        if (localStorage.getItem('squares') !== null) {
+            console.log(`squares address exists`);
+            console.log(localStorage.getItem('squares'))
+            // this.setState({
+            //     squares: JSON.parse(localStorage.getItem('squares')),
+            // });
+        } else {
+            console.log(`squares address not found`);
+        }
+
+        if (localStorage.getItem('xIsNext') !== null) {
+            console.log(`xIsNext address exists`);
+            // this.setState({
+            //     xIsNext: localStorage.getItem('xIsNext'),
+            // });
+        } else {
+            console.log(`xIsNext address not found`);
+        }
+
 
         window.addEventListener(
             "beforeunload",
